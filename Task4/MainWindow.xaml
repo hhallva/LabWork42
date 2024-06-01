@@ -1,0 +1,24 @@
+﻿<Window x:Class="Task4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task4"
+        mc:Ignorable="d"
+        Title="Медиаплеер" Height="500" Width="800">
+    <DockPanel>
+        <ListBox DockPanel.Dock="Left" x:Name="MediaListBox" 
+                 SelectionChanged="MediaListBox_SelectionChanged"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch"/>
+        <Menu DockPanel.Dock="Bottom">
+            <Button x:Name="SelectFileButton"  Content="Добавить файл(-ы) в список" Click="SelectFileButton_Click"/>
+            <Button x:Name="StartButton" Content="Старт" Click="StartButton_Click"/>
+            <Button x:Name="PauseButton" Content="Пауза" Click="PauseButton_Click"/>
+            <Button x:Name="StopButton" Content="Стоп" Click="StopButton_Click"/>
+            <TextBlock x:Name="CurrentTimeText" Width="90"/>
+            <TextBlock x:Name="TotalTimeText" Width="90"/>
+        </Menu>
+        <MediaElement x:Name="currentMediaElement" LoadedBehavior="Manual"/>
+    </DockPanel>
+</Window>
